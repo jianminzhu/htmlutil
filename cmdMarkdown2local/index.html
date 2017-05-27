@@ -290,7 +290,7 @@ Bob--&gt;Alice: I am good thanks!
         </div>
     </div>
     <div id="preview-column" class="pull-right">
-        <div id="preview-button-bar" class="preview-button-bar">
+       <!-- <div id="preview-button-bar" class="preview-button-bar">
             <ul id="preview-button-row" class="preview-button-row pull-right">
 
                 <li id="preview-button-row-notlogin" class="preview-link editor-only dropdown editor-reader-hidden">
@@ -350,8 +350,8 @@ Bob--&gt;Alice: I am good thanks!
                             <li title="最近使用的文稿"><span id="latest-notes-label">最近使用</span></li>
                         </ul>
                         <ul id="latest-notes-list" class="dropdown-menu theme-black pull-right editor-reader-hidden" role="menu">
-                            <!--insert .latest-note by editorReader.js
-                            <li class="latest-note"> <a note-id="" tabindex="-1" title=""> <span class="note-title"></span> </a> </li> -->
+                            &lt;!&ndash;insert .latest-note by editorReader.js
+                            <li class="latest-note"> <a note-id="" tabindex="-1" title=""> <span class="note-title"></span> </a> </li> &ndash;&gt;
                         </ul>
                     </div>
                 </li>
@@ -381,7 +381,7 @@ Bob--&gt;Alice: I am good thanks!
                 <li class="preview-button dropdown editor-reader-hidden" id="preview-list-button" title="文本列表 Ctrl+Alt+F">
                     <span class="dropdown-toggle icon-reorder" data-toggle="dropdown"></span>
                     <ul id="file-list" class="dropdown-menu theme-black pull-right" role="menu">
-                        <!-- insert ul.tag-list.editor-reader-hidden here by render.js -->
+                        &lt;!&ndash; insert ul.tag-list.editor-reader-hidden here by render.js &ndash;&gt;
                     </ul>
                     <ul id="file-list-topbar" class="dropdown-menu theme-black pull-right" role="menu">
                         <li id="search-file-bar">
@@ -403,7 +403,7 @@ Bob--&gt;Alice: I am good thanks!
                                 <tbody>
                                     <tr title="可以被分享给他人的固定链接">
                                         <td class="menu-label">固定链接</td>
-                                        <!--hide either of below -->
+                                        &lt;!&ndash;hide either of below &ndash;&gt;
                                         <td id="preview-published-td" class="menu-field">
                                             <a class="fixed-link-submenu" tabindex="-1" href="#">链接地址</a>
                                         </td>
@@ -411,7 +411,7 @@ Bob--&gt;Alice: I am good thanks!
                                     </tr>
                                     <tr title="公开文稿被阅读的次数">
                                         <td class="menu-label">文稿阅读</td>
-                                        <td class="menu-field article-read"></td><!--render by render.js-->
+                                        <td class="menu-field article-read"></td>&lt;!&ndash;render by render.js&ndash;&gt;
                                     </tr>
                                     <tr title="文稿的字数">
                                         <td class="menu-label">文稿字数</td>
@@ -419,11 +419,11 @@ Bob--&gt;Alice: I am good thanks!
                                     </tr>
                                     <tr title="最后修改文稿的日期">
                                         <td class="menu-label">修改日期</td>
-                                        <td class="menu-field article-updated-date"></td><!--render by render.js-->
+                                        <td class="menu-field article-updated-date"></td>&lt;!&ndash;render by render.js&ndash;&gt;
                                     </tr>
                                     <tr title="创建文稿的日期">
                                         <td class="menu-label">创建日期</td>
-                                        <td class="menu-field article-created-date"></td><!--render by render.js-->
+                                        <td class="menu-field article-created-date"></td>&lt;!&ndash;render by render.js&ndash;&gt;
                                     </tr>
                                 </tbody>
                             </table>
@@ -431,7 +431,7 @@ Bob--&gt;Alice: I am good thanks!
                         <li title="当前文稿的历史版本"><span id="info-revision-label">历史版本：</span></li>
                     </ul>
                     <ul id="revision-list" class="dropdown-menu theme-black pull-right editor-reader-hidden" role="menu">
-                        <!--insert 'ul.revision-item-template.editor-reader-hidden li.revision-item' below into here by editorReader.js-->
+                        &lt;!&ndash;insert 'ul.revision-item-template.editor-reader-hidden li.revision-item' below into here by editorReader.js&ndash;&gt;
                     </ul>
                 </li>
                 <li class="preview-button dropdown editor-only editor-reader-hidden" id="preview-settings-button" title="功能设置 Ctrl+Alt+R">
@@ -467,7 +467,7 @@ Bob--&gt;Alice: I am good thanks!
                 </li>
 
 
-                <!-- There is at least one item of 'wmd-spacer' must be in the ul list, otherwise, the hover on the button leads to page issue. -->
+                &lt;!&ndash; There is at least one item of 'wmd-spacer' must be in the ul list, otherwise, the hover on the button leads to page issue. &ndash;&gt;
                 <li class="wmd-spacer"></li>
                 <li class="preview-button dropdown" id="preview-about-button" title="关于">
                     <span class="dropdown-toggle icon-info-sign" data-toggle="dropdown" data-hover="dropdown" data-delay="100" data-close-others="true"></span>
@@ -480,7 +480,7 @@ Bob--&gt;Alice: I am good thanks!
                     </ul>
                 </li>
             </ul>
-        </div>
+        </div>-->
         <!--in page preview buttons. -->
         <div class="in-page-preview-buttons editor-reader-hidden">
             <ul>
@@ -573,10 +573,10 @@ Bob--&gt;Alice: I am good thanks!
 </ul>
 
 <!-- Prompt on loading article, hidden when loading. -->
-<div id="article-loading-alert" class="alert alert-info editor-reader-hidden">
+<!--<div id="article-loading-alert" class="alert alert-info editor-reader-hidden">
     <button type="button" class="close" data-dismiss="alert">&times;</button>
     <strong>正在加载文章图片，请稍等片刻... </strong>
-</div>
+</div>-->
 
 <!-- UML diagram, hidden always -->
 <div id="uml-X-x-X-diagram" class="editor-reader-hidden-always"></div>
@@ -837,7 +837,9 @@ Bob--&gt;Alice: I am good thanks!
 
     <script src="www.zybuluo.com/static/assets/mdeditor/7daebaf5.mdeditor.min.js"></script>
 
-
+    <script>$(function () {
+        $("#editor-column").find(">.wmd-button-bar,>.in-page-editor-buttons").hide()
+    })</script>
 
 </body>
 </html>
