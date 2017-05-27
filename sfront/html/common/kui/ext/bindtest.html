@@ -1,0 +1,60 @@
+<script src="../js/jquery.min.js"></script>
+<script src="../require.js"></script>
+<script src="../require_root_config.js"></script>
+<form action="">
+    <input type="text" name="query"><BR>
+    <input type="text" name="query"><BR>
+    lastQuery<input type="text" name="lastQuery">
+</form>
+<script>
+    require(["jquery", "kendo.binder.min", "kui.ext.bindutil.js"], function (jq, kendo, buclass) {
+        var bu = buclass.genBindUtil(kendo, jq, "test")
+        var conf = [{
+            sel: "select",
+            "data-text-field": "name",
+            "data-value-field": "id",
+            "data-auto-bind": "false",
+            "data-value-primitive": "true",
+            "data-bind": "value: selectedProductId, source: products['test'] "
+        }, {
+            sel: '[ name=query]',
+            "data-bind": "value: query,events:{click:queryclick}"
+        }, {
+            sel: '[ name=lastQuery]',
+            "data-bind": "value: lastQuery"
+        }]
+        var obj = {
+            lastQuery: "",
+            query: "ddd"
+            , items: ["1", "2", "3", "4"]
+            , aaa: ["1", "2", "3", "4"]
+            , selectedProductId: 0,
+            products: {
+                test: [
+                    {id: 0, name: "all"},
+                    {id: 1, name: "Coffee"},
+                    {id: 2, name: "Tea"},
+                    {id: 3, name: "Juice"}
+                ], test2: [
+                    {id: 0, name: "0"},
+                    {id: 1, name: "1"},
+                    {id: 2, name: "2"},
+                    {id: 3, name: "3"}
+                ]
+            }, queryChange: function () {
+
+            },
+            queryclick: function (e) {
+                console.log($(e.target).val())
+            }, keyup: function (e) {
+                e.stopPropagation();
+            }
+        }
+        model = bu.bindModel(obj, conf)
+
+        $("body").click(function () {
+            model.set("lastQuery", model.query)
+            $(this).append("<br>" + JSON.stringify(bu.getParams(model, "query,lastQuery,selectedProductId")))
+        }).append(bu.msg)
+    })
+</script>

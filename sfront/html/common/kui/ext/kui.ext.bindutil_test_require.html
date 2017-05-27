@@ -1,0 +1,12 @@
+<script src="../js/jquery.min.js"></script>
+<script src="require.js"></script>
+<script>
+require(["kui.ext.bindutil.js"], function (bu) {
+    var bu = bu.bindutil("ddddd");
+
+    $("body").click(function () {
+        var random=bu.random()
+        $(this).append("<br>"+random )
+    }).append( bu.msg)
+})
+</script>

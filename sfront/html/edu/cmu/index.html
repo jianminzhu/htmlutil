@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta charset="utf-8">
+    <meta name="referrer" content="always">
+    <title>校园搜索</title>
+    <link rel="stylesheet" href="../../common/index.css?v=1.1">
+    <script src="../../common/kui/js/jquery.min.js"></script>
+    <link  href="../../common/lib/kkpager/kkpager_purple.css" rel="stylesheet"/>
+    <script src="../../common/lib/kkpager/kkpager.js"></script>
+    <script src="../../common/lib/md5.min.js"></script>
+    <script src="../../common/lib/juicer.js"></script>
+    <script src="../../common/lib/store/store_json2.min.js"></script>
+    <script src="../../common/kui/require.js"></script>
+    <script src="../../common/kui/require_kuiroot_config.js"></script>
+    <script src="../../common/ext/json_result_util.js?v=1.1"></script>
+    <script src="../../common/ext/search.render.util.js?v=1.10"></script>
+    <script>sogou_interation=26834</script>
+    <script src="../../common/index.js?v=1.18"></script>
+</head>
+<body>
+<div class="wrapTop"></div>
+<div class="wrap" id="topNav">
+    <div class="header">
+        <a href="javascript:void(0)" class="logo_noimg" target="_blank">
+            <img src="logo/index_logo.png" width="165px" height="55px" alt="">
+        </a>
+        <form name="searchForm" id="searchForm">
+            <div class="querybox">
+                <div class="qborder">
+                    <div class="qborder2">
+                        <input type="text" class="query" id="upquery" name="query">
+                        <a href="javascript:void(0)" class="qreset2"></a></div>
+                </div>
+                <input type="button" value="搜索" class="sbtn1" name="search">
+                <input type="button" value="全网搜索" class="sbtn2" name="searchBySogou">
+            </div>
+        </form>
+    </div>
+</div>
+<div class="wrapper">
+    <div id="main" class="main" style="margin-top: 90px">
+        <div id="log"></div>
+        <div class="left-nav">
+            <ul>
+                <li><a href="javascript:void(0)" data-sgp-inttime="inttime_all"><span>全部时间</span></a></li>
+                <li><a href="javascript:void(0)" data-sgp-inttime="inttime_day"><span>一天内</span></a></li>
+                <li><a href="javascript:void(0)" data-sgp-inttime="inttime_week"><span>一周内</span></a></li>
+                <li><a href="javascript:void(0)" data-sgp-inttime="inttime_month"><span>一月内</span></a></li>
+                <li><a href="javascript:void(0)" data-sgp-inttime="inttime_year"><span>一年内</span></a></li>
+            </ul>
+            <ul class="d-sort">
+                <li><a href="javascript:void(0)" data-sgp-ranktype="0"><span>默认排序</span></a></li>
+                <li><a href="javascript:void(0)" data-sgp-ranktype="1"><span>时间排序</span></a></li>
+            </ul>
+        </div>
+        <div id="doc_form_container" style="margin:0 0 16px ;display: none">搜索文档：
+            <label><input type="radio" name="filetype" value="doc">word(.doc)</label>
+            <label><input type="radio" name="filetype" value="pdf">PDF(.pdf)</label>
+            <label><input type="radio" name="filetype" value="ppt">PPT(.ppt)</label>
+            <label><input type="radio" name="filetype" value="xls">excel(.xls)</label>
+            <label><input type="radio" name="filetype" value="rtf">RTF(.rtf)</label>
+            <label><input type="radio" name="filetype" value="all">全部文档</label>
+            <label><input type="radio" name="filetype" value="">全部网页</label>
+        </div>
+        <div class="filter_box" data-sgps-codition style="display:none">您已更改筛选条件为<strong data-sgps-inttime></strong><a
+                href="javascript:void(0)" data-sgpo="sgp_cancle_timeCycle">取消筛选</a>
+        </div>
+        <div class="emsg_box" style="display:none"></div>
+        <div>
+            <div class="results">
+                <div id="d_search_result"></div>
+                <p class="technical">搜索技术由 <img src="../../common/web/img/sousuo01_1.png">提供</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="wrap2">
+
+    <div class="p" style="flat:left" id="d_search_result_pager">
+    </div>
+
+</div>
+
+<div class="wrap2">
+    <div class="header2" id="bottomInputs">
+        <form name="searchForm">
+            <div class="querybox">
+                <div class="qborder">
+                    <div class="qborder2"><input type="text" class="query" name="query">
+                        <a href="javascript:void(0)" class="qreset2"></a></div>
+                </div>
+                <input type="hidden" name="ie" value="utf8"/><input type="hidden" name="cid" value="0"/><input
+                    type="hidden" name="interation" value="0"/><input type="hidden" name="ranktype" value="0"/><input
+                    type="button" value="搜索" class="sbtn1" uigs="searchBtn" name="search">
+                <input type="button" value="全网搜索" class="sbtn2" uigs="searchBtn" name="searchBySogou">
+
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
