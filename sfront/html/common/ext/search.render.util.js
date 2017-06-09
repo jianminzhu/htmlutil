@@ -1,31 +1,10 @@
 var SearchRenderUtil = (function () {
-    function SearchRenderUtil(juicer, jQuery, JsonResultUtil, kkpager) {
-        this.tpls = {
-            noresult: [
-                ' <div class="vrTips" id="noresult_part1_container"><p class="icon_noRes"> 抱歉，没有找到与<span style="font-family:宋体">“</span>',
-                '    <em>$${queryWithXss}</em> <span style="font-family:宋体">”</span>相关的内容。 </p>',
-                '    <h3 class="p14" id="noresult_part3_container">建议您:</h3>',
-                '    <ol class="noResList">',
-                '        <li>请检查您输入的关键词是否有错误;</li>',
-                '        <li>换另一个相似的词，或常见的词试试;</li>',
-                '    </ol>',
-                '</div>',
-            ], nomal: [
-                '<div class="rb"><h3 class="pt">{@if row.____isDebug____==true}<div>${row.____xml____}</div>{@/if}',
-                '    {@if  row._needShowFileIcon }<img class="hb1" src="../../common/images/ui/${row.smallicon_title}.gif" alt="${row.smallicon_title}" title="${row.smallicon_title}"/>{@/if}',
-                '           <a class="dttl" target="_blank" href="${row.url}" >$${row.title}</a>',
-                '     {@if  row._needShowFileIcon }<a target="_blank"  href="${row.url}"><img width="41" title="下载" src="../../common/images/cloud/dldoc.gif" height="15" class="dldoc" alt="下载"></a>{@/if}',
-                '</h3>',
-                '    <div class="ft">$${row.content}',
-                '    </div>',
-                '    <div class="fb"><cite>${row.showurl}&nbsp;-&nbsp;${row.date}</cite></div>',
-                '</div>'
-            ], vr: []
-        };
+    function SearchRenderUtil(juicer, jQuery, JsonResultUtil, kkpager, TplUtil) {
         this.juicer = juicer;
         this.$ = jQuery;
         this.JsonResultUtil = JsonResultUtil;
         this.kkpager = kkpager;
+        this.TplUtil = TplUtil;
         juicer.register('jsonF', JSON.stringify);
     }
     SearchRenderUtil.prototype.renderPage = function (json, page, pageContentId, callback) {
@@ -73,8 +52,15 @@ var SearchRenderUtil = (function () {
         var $ = this.$;
         var totalPages = json.totalPages || 0;
         var html = "";
-        var jpage = $("#" + pageId);
         var cache = cacheAll[cacheKey] = cacheAll[cacheKey] || {};
+        var renderToPage = function (html) {
+            cache.html = html;
+            cache.ltime = new Date().getTime();
+            if (jout) {
+                jout.html(html);
+            }
+        };
+        var tplUtil = new this.TplUtil();
         if (totalPages >= 1 && json.totalItems > 0) {
             if (isCache) {
                 cache.json = json;
@@ -82,23 +68,20 @@ var SearchRenderUtil = (function () {
             var page = json.page;
             //重新渲染分页
             this.renderPage(json, page, pageId, pageFunctin);
-            //渲染搜素搜索结果 ===================
-            var arr = new this.JsonResultUtil().parseItems(json, params.idg);
-            var tpl = "nomal";
-            var juicer_tmp = [
-                '{@each  rows as row,index}',
-                this.tpls[tpl].join(""),
-                '{@/each}'
-            ];
-            html = juicer(juicer_tmp.join(""), { rows: arr, p: params });
+            //搜索结果 ===================
+            var rows = new this.JsonResultUtil().parseItems(json, params.idg);
+            tplUtil.getTplsByRows(rows).done(function () {
+                for (var i = 0, len = rows.length; i < len; i++) {
+                    var row = rows[i];
+                    var tpl = tplUtil.getRenderTpl(row["tplid"]);
+                    html += juicer(tpl, { row: row, p: params });
+                }
+                renderToPage(html);
+            });
         }
         else {
-            html = juicer(this.tpls["noresult"].join(""), { queryWithXss: this.filterQueryXss(params) });
-        }
-        cache.html = html;
-        cache.ltime = new Date().getTime();
-        if (jout) {
-            jout.html(html);
+            html = juicer(tplUtil.getRenderTpl("noresult"), { queryWithXss: this.filterQueryXss(params) });
+            renderToPage(html);
         }
         return html;
     };

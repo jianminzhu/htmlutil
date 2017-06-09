@@ -1,17 +1,20 @@
-(function (require, $, SearchRenderUtil, JsonResultUtil, kkpager, juicer, md5, store) {
+(function (require, $, SearchRenderUtil, JsonResultUtil, kkpager, juicer, md5, store,TplUtil) {
     $(function () {
 
         /*顶部搜索框浮动 */
         var sg_css_top_float_isrun = false;
-        $(".wrap").css({"margin-left": $(".header2").offset().left})
-        window.onresize = function () {
-            if (!sg_css_top_float_isrun) {
-                sg_css_top_float_isrun = true;
-                $(".wrap").css({"margin-left": $(".header2").offset().left})
-                setTimeout(function () {
-                    sg_css_top_float_isrun = false;
-                }, 30)
+        try {
+            $(".wrap").css({"margin-left": $(".header2").offset().left})
+            window.onresize = function () {
+                if (!sg_css_top_float_isrun) {
+                    sg_css_top_float_isrun = true;
+                    $(".wrap").css({"margin-left": $(".header2").offset().left})
+                    setTimeout(function () {
+                        sg_css_top_float_isrun = false;
+                    }, 30)
+                }
             }
+        } catch (e) {
         }
 
         /*顶部搜索框浮动 end*/
@@ -153,7 +156,7 @@
         }
         /*页面通用函数-------end*/
         require(["kendo.binder.min", "../ext/kui.ext.bindutil" ], function (kendo, bindutil) {
-            var sru = new SearchRenderUtil(juicer, $, JsonResultUtil, kkpager);
+            var sru = new SearchRenderUtil(juicer, $, JsonResultUtil, kkpager,TplUtil);
             var {urlParams, hashParams,needChagneUrl}=getUrlAndHashParams();
             var modelValFromHash = parseParamsFromHash(hashParams["ck"]);
             var bu = bindutil.genBindUtil(kendo, $, "test")
@@ -505,4 +508,4 @@
 
         })
     })
-})(require, $, SearchRenderUtil, JsonResultUtil, kkpager, juicer, md5, store)
+})(require, $, SearchRenderUtil, JsonResultUtil, kkpager, juicer, md5, store,TplUtil)

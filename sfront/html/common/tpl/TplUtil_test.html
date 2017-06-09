@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../kui/js/jquery.min.js"></script>
+    <script src="TplUtil.js"></script>
+    <script>
+        var loadTpl = function () {
+            new TplUtil().getTplByIds("nomal,100,noresult,").done(function () {
+                console.log(SG_EDU_CACHED_TPL)
+            })
+        }
+        $(function () {
+            loadTpl()
+        })
+    </script>
+</head>
+<body>
+
+</body>
+</html>

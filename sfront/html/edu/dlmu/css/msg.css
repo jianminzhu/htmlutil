@@ -1,0 +1,32 @@
+/* CSS Document */
+.vrTips{margin-top:100px;padding-bottom:12px;font-size:14px;line-height:22px;}
+.vrTips a em{text-decoration:underline;}
+.vrTips .filter_box{margin-bottom:0;}
+.vrTips .filter_box a{margin:0;}
+.vrTips .filter_box p{font-size:12px;padding-left:1px;}
+.vrTips h4{font-size:13px;line-height:20px;}
+.icon_noRes{line-height:22px;padding-left:28px;background:url(../images/tips.gif) no-repeat;margin-bottom:36px;}
+.noResList{margin-left:25px;margin-top:1px;list-style-type:decimal;}
+.noResList li{padding:1px 0;}
+.mg_9{margin-bottom:9px;}
+.tips_p1{padding-top:17px;}
+.tips_p1 p{margin-bottom:7px;}
+.vrTips .p13{font-weight:normal;margin-left:5px;font-size:13px;}
+.icon_find{padding-left:21px;background:url(../images/ico_zhanzhang_srch.gif) no-repeat 0 2px;height:22px;}
+.vrTips .tips_p2{padding-left:21px;font-size:13px;}
+.tips_p1.no_mg{padding-top:0;}
+
+.tips-box{width:548px;padding:12px 0 0;border:1px solid #eee;font-size:13px;}
+.tips-box h3,.tips-box p{padding:0 15px}
+.tips-box h3{font-size:15px;font-family:"Microsoft YaHei";font-weight: normal;line-height:20px;zoom:1; margin-bottom:-1px; position:relative}
+.tips-box p{margin-top:5px;}
+.tips-box p a{margin-left:15px}
+.tips-box a{text-decoration:none}
+.tips-box a:hover{text-decoration:underline}
+.tips-box .c-green{color:#008000;font-weight:normal}
+.tips-box ul{margin-top:10px;padding:5px 15px 9px;border-top:1px solid #eee}
+.tips-box li{margin-top:5px;font-weight:bold}
+.tips-box li a{margin-right:15px;font-weight:normal}
+.vrTips .nosrch-tit{font-size: 14px;font-weight: bold;padding:32px 0 0;line-height:20px;}
+.ico-marks{margin:7px 0 0 -28px;}
+.noRes_info{min-height:20px;margin-bottom: 16px;background-color: #f7f7f7;margin-top: 35px;width: 550px;}

@@ -39,6 +39,7 @@ var JsonResultUtil = (function () {
                 var tplid = gt(doc, 'tplid');
                 var news = this.gt(doc, 'display');
                 var obj = {};
+                obj["tplid"] = tagtext(tplid);
                 obj["url"] = tagtext(gt(news, 'url'));
                 obj["showurl"] = tagtext(gt(news, 'showurl'));
                 obj["title"] = this.sub(tagtext(gt(news, 'title')), 50);
@@ -49,7 +50,7 @@ var JsonResultUtil = (function () {
                 //     obj.image_change="http://img01.sogoucdn.com/net/a/04/link?appid=100520031&url="+obj.image;
                 // }
                 obj["content"] = tagtext(gt(news, 'content'));
-                obj["docid"] = tagtext(gt(news, 'docid'));
+                obj["docid"] = tagtext(gt(doc, 'docid'));
                 obj["date"] = tagtext(gt(doc, 'date'));
                 obj["smallicon_title"] = this.tagattr(gt(doc, 'smallicon'), "title");
                 obj["_needShowFileIcon"] = this.needShowFileIcon[obj["smallicon_title"]] || false;

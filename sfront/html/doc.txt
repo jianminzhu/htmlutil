@@ -1,0 +1,43 @@
+"<?xml version="1.0" encoding="gbk"?>
+<DOCUMENT>
+    <docid>93b37865f9aabc40-eb4e5c09f14ca66f-b1a0856ab4189de41d423cf6d7d6fe45</docid>
+    <item>
+        <display>
+            <url>
+                <![CDATA[http://www.cmu.edu.cn/course/upl_files/3/2005719151654401.htm]]>
+            </url>
+            <title>
+                <![CDATA[第十一章 T细胞介导的细胞免疫应答]]>
+            </title>
+            <title1>
+                <![CDATA[]]>
+            </title1>
+            <imageurl>
+                <![CDATA[]]>
+            </imageurl>
+            <content>
+                <![CDATA[第十一章 T细胞介导的细胞免疫应答 【目的要求】 1. 掌握 细胞免疫应答的概念。 TD 抗原处理，加工和递呈的一般途径， T 细胞的抗原识别方式， T 细胞活化的信号刺激， T 细胞...]]>
+            </content>
+            <imagecontent>
+                <![CDATA[]]>
+            </imagecontent>
+            <pagesize>6k</pagesize>
+            <hasmorewebsinsite>1</hasmorewebsinsite>
+            <PicFilter>
+                <![CDATA[1]]>
+            </PicFilter>
+            <VideoDetected>
+                <![CDATA[0]]>
+            </VideoDetected>
+            <showurl>
+                <![CDATA[www.cmu.edu.cn/c...]]>
+            </showurl>
+            <date>2005-7-19</date>
+            <normdate>2005-7-19</normdate>
+            <detailpos>d0</detailpos>
+        </display>
+    </item>
+    <tplid>100</tplid>
+    <displayconfig  commentMark="0" openUrlInNewWin="1" showSnapshot="1" showPreview="1" showSize="0" showDateTime="1">
+    </displayconfig>
+</DOCUMENT>"

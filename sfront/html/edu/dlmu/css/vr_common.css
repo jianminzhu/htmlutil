@@ -1,0 +1,80 @@
+/*vr_base*/
+.vrwrap {margin-bottom: 12px;min-height: 50px;width: 550px;}
+.vrTitle{font-size:16px;font-weight:normal;line-height:26px;}
+.vrTitle .aMore{display:none;}
+.vrTitle a:visited {color: #741274}
+.vrTitle a em{text-decoration: underline;}
+.rb .vrTitle{line-height:24px;}
+.vr_authico{vertical-align: middle;margin-left: 4px;vertical-align: baseline\0;*vertical-align: baseline;position: relative\0;*position: relative;top: 2px\0;*top: 2px;}
+.vr-authico{margin-left: 4px;position: relative;top: -1px;top:-2px\0;*top:0px;background-color:#1ba91b;display: inline-block;_display:inline;_zoom:1;font-size: 12px;padding:0 4px;line-height: 16px;color: #fff;}
+.tit-ico{padding-left: 20px;background-repeat: no-repeat;background-position: left 1px;}
+.rb{padding-top:1px;margin-bottom:13px;zoom:1;}
+.ft{line-height:20px;}
+.ft a{color:#000;text-decoration:none;}
+.ft a em{text-decoration:none;}
+.ft a:hover{text-decoration:none;}
+.fb{line-height:22px;color:#666;height:22px;}
+.rb .fb{line-height:20px;}
+.fb a{color:#666;}
+cite,cite a{color:#008000;font-style:normal;}
+.blue-color {
+    color: #16aee4;
+}
+.str_img {
+    border: 1px solid #ebebeb;
+    position: relative;
+    float: left;
+    overflow: hidden;
+    margin-right: 11px;
+    _margin-right: 8px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    zoom: 1;
+    z-index: 0;
+}
+.size_120_80 {
+    width: 120px;
+    height: 80px;
+}
+/*end vr_base*/
+
+.strBox {
+    zoom: 1;
+}
+.str_div {
+  float: left;
+  padding-bottom: 5px;
+  margin-right: 12px;
+  _margin-right: 8px;
+}
+.str_div .str_img {
+  margin-bottom: 0;
+  margin-right: 0;
+}
+.str_img img {
+  vertical-align: top;
+  position: relative;
+}
+.str_info_div {
+  padding-top: 1px\9;
+}
+.str_info {
+    line-height: 20px;
+    padding: 1px 0;
+    overflow: hidden;
+}
+.str-c-txt {
+    margin-right: 5px;
+    font-size: 12px;
+    position: relative;
+    top: -1px;
+}
+.str-c-txt strong {
+    font-style: normal;
+}
+.str-c-txt i {
+    font-style: normal;
+    margin: 0 2px;
+}
+.vrTitle .ico_type{margin-right: 5px;vertical-align: -1px;}
+.vrTitle .dw-icon{margin-left: 10px;width: 49px;height: 18px;display: inline-block;background: url(../images/dw_ico.gif);vertical-align: -3px;}
